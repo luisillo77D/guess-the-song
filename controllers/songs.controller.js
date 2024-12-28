@@ -20,7 +20,7 @@ export const getSongs = async (req, res) => {
         const songs = await Song.find();
         res.status(200).json(songs);
     } catch (err) {
-        res.status(400).json({ error: err.message });
+        res.status(408).json({ error: err.message });
     }
     };
 

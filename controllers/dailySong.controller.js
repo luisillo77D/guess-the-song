@@ -19,3 +19,15 @@ export const createDailySong = async (req, res) => {
         console.log(err)
     }
 }
+
+export const getDailySong = async (req, res) => {
+    try {
+        const date = new Date();
+        date.setHours(0, 0, 0, 0);
+        const dailySong = await DailySong.findOne({ date }).populate('songId');
+        res.status(200).json(dailySong);
+    }
+    catch (err) {
+        res.status(408).json({ error: err.message });
+    }
+}

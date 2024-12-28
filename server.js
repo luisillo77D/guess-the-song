@@ -12,7 +12,7 @@ connectdb();
 //cada 24 horas se ejecuta la funcion createDailySong
 setInterval(async () => {
   const date = new Date();
-  
+  if(date.getHours() === 0 && date.getMinutes() === 0){
     await createDailySong();
-  
+  }
 }, 1000 * 60 * 60 * 24);
