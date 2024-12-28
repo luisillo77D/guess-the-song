@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-const url = dotenv.config().parsed.MONGODB_URI;
+const url = 'mongodb+srv://luisillo77mario:sapo2002@xddddd.plaej.mongodb.net/?retryWrites=true&w=majority&appName=xddddd';
 
 export const connectdb = async () =>{
     try {
